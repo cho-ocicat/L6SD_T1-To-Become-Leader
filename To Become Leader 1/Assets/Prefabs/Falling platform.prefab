@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c7c0f0e6dbebe40a998116377c99f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallDelay: 0.5
+  destroyDelay: 1.5
   crackSfx: {fileID: 5593316118009990477}
   woodCrack: {fileID: 2100000, guid: b1d07295979bcbd4faaba4464372c5e6, type: 2}
   platform: {fileID: 4998378771613027200}

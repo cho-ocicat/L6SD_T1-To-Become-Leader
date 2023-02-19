@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Platform_Fall : MonoBehaviour
 {
-    float fallDelay = 2f;
-    float destroyDelay = 3f;
+    public float fallDelay;
+    public float destroyDelay;
     bool isFalling = false;
     float downSpeed = 0;
     [SerializeField] AudioSource crackSfx;
