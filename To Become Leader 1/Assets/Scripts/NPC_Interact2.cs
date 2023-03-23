@@ -11,7 +11,7 @@ public class NPC_Interact2 : MonoBehaviour
 
     //call the script
     DialogueSystem dialogueSystem;
-    UI_Timer1 UITimer;
+    //UI_Timer1 UITimer;
 
     public string nameNPC;
 
@@ -23,7 +23,7 @@ public class NPC_Interact2 : MonoBehaviour
     {
         //find and call the script
         dialogueSystem = FindObjectOfType<DialogueSystem>();
-        UITimer = FindObjectOfType<UI_Timer1>();
+        //UITimer = FindObjectOfType<UI_Timer1>();
     }
 
     void Update()
@@ -52,10 +52,14 @@ public class NPC_Interact2 : MonoBehaviour
             FindObjectOfType<DialogueSystem>().NPCName();
         } 
 
-        if((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.Return))
+        /* if((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.Return))
         {
             FindObjectOfType<UI_Timer1>().Result();
-        }
+        } */
+    }
+    private void OnTriggerExit(Collider other) 
+    {
+        FindObjectOfType<DialogueSystem>().OutOfRange();
     }
 
 }

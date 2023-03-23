@@ -19,6 +19,7 @@ public class Player_move : MonoBehaviour
     [SerializeField] AudioSource respawnSfx;
 
     Vector3 respawnPoint;
+    [SerializeField] Vector3 testResult;
     public GameObject fallDetector;
 
     // Start is called before the first frame update
@@ -39,6 +40,11 @@ public class Player_move : MonoBehaviour
         if(Input.GetButtonDown("Jump") && IsGrounded()){
             rb.velocity = new Vector3(rb.velocity.x, jumpPower, rb.velocity.z);
             jumpSfx.Play();
+        }
+
+        if(Input.GetKey(KeyCode.Tab))
+        {
+            transform.position = testResult;
         }
     }
 

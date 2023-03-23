@@ -9,11 +9,16 @@ public class UI_Timer1 : MonoBehaviour
     float startTime;
     
     GameResult gameResult;
+    DialogueSystem dialogueSystem;
+    public GameObject player;
+    public Vector3 playerPosition;
 
     bool finished = true;
 
     void Start()
     {
+        //find and call the script
+        dialogueSystem = FindObjectOfType<DialogueSystem>();
     }
 
     void Update()
@@ -56,11 +61,16 @@ public class UI_Timer1 : MonoBehaviour
     public void Result()
     {
         gameResult = FindObjectOfType<GameResult>();
-
+        
         finished = true;
 
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.E))
         {
+            FindObjectOfType<DialogueSystem>().OutOfRange();
+            //dialogueSystem.dialogueGUI.SetActive(false);
+
+            player.transform.position = playerPosition;
+
             if(timerText.text.Contains("0:") || timerText.text.Contains("1:"))
             {
                 gameResult.Winning();
